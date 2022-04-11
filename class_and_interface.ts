@@ -150,9 +150,18 @@ namespace Validator {
 
     let name = "Validator";
 
-    export getName = function() {
+    export const getName = function() {
 	return name
     }
 }
 
-console.log(Validator.name)
+console.log(Validator.getName())
+
+/// 泛型
+///
+function middleware<T>(value: T) : T {
+    return value
+}
+
+console.log(middleware<string>("Hello World"))
+console.log(middleware<number>(99))
